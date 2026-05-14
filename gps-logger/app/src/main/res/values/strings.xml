@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">GPS Logger</string>
+    <string name="channel_name">GPS 记录</string>
+    <string name="channel_description">持续记录 GPS 位置</string>
+    <string name="notification_title">正在记录 GPS</string>
+    <string name="notification_text">已记录 %1$d 个点 · %2$s</string>
+    <string name="notification_stop">停止</string>
+</resources>

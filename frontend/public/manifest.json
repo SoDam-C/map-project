@@ -1,0 +1,22 @@
+{
+  "name": "我的足迹 — 全球数据地图",
+  "short_name": "足迹",
+  "description": "记录足迹与故事的多维日记",
+  "start_url": "/diary",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

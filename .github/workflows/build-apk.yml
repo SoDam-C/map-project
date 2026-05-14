@@ -1,0 +1,44 @@
+name: Build GPS Logger APK
+
+on:
+  push:
+    paths:
+      - 'gps-logger/**'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gps-logger/gradlew || true
+
+      - name: Create gradle wrapper
+        working-directory: gps-logger
+        run: |
+          if [ ! -f gradlew ]; then
+            wget -q https://services.gradle.org/distributions/gradle-8.10.2-bin.zip
+            unzip -q gradle-8.10.2-bin.zip
+            gradle-8.10.2/bin/gradle wrapper --gradle-version 8.10.2
+            rm -rf gradle-8.10.2 gradle-8.10.2-bin.zip
+          fi
+
+      - name: Build debug APK
+        working-directory: gps-logger
+        run: ./gradlew assembleDebug
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: gps-logger-debug
+          path: gps-logger/app/build/outputs/apk/debug/*.apk
+          retention-days: 30

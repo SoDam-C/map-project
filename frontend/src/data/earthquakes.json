@@ -1,0 +1,45 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [142.37, 38.32] },
+      "properties": { "id": "eq-001", "magnitude": 7.1, "depth": 33, "place": "Off the east coast of Honshu, Japan", "time": "2025-12-01T04:23:00Z" }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-122.68, 38.32] },
+      "properties": { "id": "eq-002", "magnitude": 4.2, "depth": 12, "place": "Northern California", "time": "2025-12-01T08:15:00Z" }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [28.98, 36.44] },
+      "properties": { "id": "eq-003", "magnitude": 5.8, "depth": 45, "place": "Eastern Mediterranean", "time": "2025-12-01T12:00:00Z" }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [166.95, -14.62] },
+      "properties": { "id": "eq-004", "magnitude": 6.3, "depth": 150, "place": "Vanuatu region", "time": "2025-12-01T16:45:00Z" }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [86.92, 27.71] },
+      "properties": { "id": "eq-005", "magnitude": 5.0, "depth": 20, "place": "Nepal-India border region", "time": "2025-12-01T20:30:00Z" }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-70.76, -30.53] },
+      "properties": { "id": "eq-006", "magnitude": 4.8, "depth": 55, "place": "Chile-Argentina border", "time": "2025-12-02T02:10:00Z" }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [127.65, 36.12] },
+      "properties": { "id": "eq-007", "magnitude": 3.5, "depth": 8, "place": "South Korea", "time": "2025-12-02T06:45:00Z" }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [120.98, 14.62] },
+      "properties": { "id": "eq-008", "magnitude": 6.1, "depth": 70, "place": "Luzon, Philippines", "time": "2025-12-02T10:20:00Z" }
+    }
+  ]
+}

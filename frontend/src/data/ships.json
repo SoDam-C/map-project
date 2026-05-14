@@ -1,0 +1,12 @@
+{
+  "vessels": [
+    { "mmsi": "211234560", "name": "MV Atlantic Star", "lat": 36.85, "lon": -76.29, "heading": 45, "speed": 14.2, "type": "cargo", "destination": "Rotterdam" },
+    { "mmsi": "311040700", "name": "Pacific Voyager", "lat": 34.05, "lon": -118.25, "heading": 225, "speed": 18.5, "type": "tanker", "destination": "Singapore" },
+    { "mmsi": "538009027", "name": "Nordic Wind", "lat": 55.68, "lon": 12.57, "heading": 90, "speed": 11.0, "type": "cargo", "destination": "Hamburg" },
+    { "mmsi": "636091789", "name": "Coral Sea", "lat": -33.87, "lon": 151.21, "heading": 315, "speed": 16.3, "type": "passenger", "destination": "Sydney" },
+    { "mmsi": "431501405", "name": "Eastern Promise", "lat": 22.28, "lon": 114.17, "heading": 180, "speed": 12.8, "type": "container", "destination": "Shanghai" },
+    { "mmsi": "249789000", "name": "Celtic Warrior", "lat": 51.5, "lon": -5.1, "heading": 270, "speed": 15.0, "type": "cargo", "destination": "New York" },
+    { "mmsi": "352773000", "name": "Ocean Freedom", "lat": 25.05, "lon": 55.08, "heading": 135, "speed": 13.5, "type": "tanker", "destination": "Mumbai" },
+    { "mmsi": "477123400", "name": "Asia Spirit", "lat": 1.28, "lon": 103.85, "heading": 0, "speed": 10.2, "type": "container", "destination": "Tokyo" }
+  ]
+}
