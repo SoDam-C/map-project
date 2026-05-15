@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback, useEffect, useRef, useMemo } from 'react';
+import { Suspense, useState, useCallback, useEffect, useRef } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { MapViewer, type MapViewerHandle } from '@/components/map/MapViewer';
 import { useFootprintLayer, FootprintLayerManager } from '@/components/travel/FootprintLayerManager';
@@ -19,7 +19,7 @@ const VALID_LAYERS = [
 ] as const;
 type EmbedLayer = typeof VALID_LAYERS[number];
 
-export default function EmbedPage() {
+function EmbedMap() {
   const params = useSearchParams();
 
   // Parse URL params
@@ -159,5 +159,13 @@ export default function EmbedPage() {
         </div>
       )}
     </div>
+  );
+}
+
+export default function EmbedPage() {
+  return (
+    <Suspense fallback={<div className="h-full w-full bg-gray-950" />}>
+      <EmbedMap />
+    </Suspense>
   );
 }
