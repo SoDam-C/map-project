@@ -48,6 +48,30 @@
 | `controls` | 显示缩放按钮 | `true` |
 | `legend` | 显示图例 | `false` |
 
+### 自定义数据（外挂图层）
+
+通过 `data` 参数传入外部 GeoJSON 文件的 URL，地图会自动拉取并渲染为自定义图层。
+
+| 参数 | 说明 | 默认值 | 示例 |
+|------|------|--------|------|
+| `data` | GeoJSON 数据文件 URL | — | `https://mysite.com/points.geojson` |
+| `dataColor` | 数据点/线/面颜色 | 跟随 `accent` | `%23ff0000` |
+| `dataRadius` | 圆点半径（Point 数据） | `6` | `10` |
+| `dataLineWidth` | 线条宽度（Line/Polygon 数据） | `2` | `4` |
+| `dataOpacity` | 透明度 0-1 | `0.85` | `0.6` |
+| `dataLabel` | 标签字段名（显示文字标注） | — | `name` |
+| `dataName` | 图例中显示的名称 | `自定义数据` | `我的店铺` |
+
+**支持的几何类型：**
+- `Point` / `MultiPoint` → 圆点标记
+- `LineString` / `MultiLineString` → 线条
+- `Polygon` / `MultiPolygon` → 填充区域 + 边框
+
+**注意事项：**
+- GeoJSON 文件需要允许跨域（CORS），即服务器需返回 `Access-Control-Allow-Origin: *`
+- 数据加载后会自动缩放地图以适配数据范围（除非指定了 `center`）
+- GeoJSON Feature 的 `properties` 中可以有任意字段，`dataLabel` 指定哪个字段作为文字标签
+
 ## 底图选项
 
 | ID | 说明 |
@@ -107,6 +131,56 @@
   src="https://your-domain.com/embed?layers=footprints&controls=false"
   width="100%"
   height="400"
+/>
+```
+
+### 自定义数据 — 展示自己的 POI
+
+```html
+<iframe
+  src="https://your-domain.com/embed?data=https://mysite.com/shops.geojson&dataColor=%23ff0000&dataRadius=8&dataLabel=name&dataName=我的店铺&legend=true"
+  width="100%"
+  height="600"
+/>
+```
+
+GeoJSON 文件示例（`shops.geojson`）：
+
+```json
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "name": "旗舰店", "type": "直营" },
+      "geometry": { "type": "Point", "coordinates": [116.4, 39.9] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "中关村店", "type": "加盟" },
+      "geometry": { "type": "Point", "coordinates": [116.32, 39.98] }
+    }
+  ]
+}
+```
+
+### 自定义数据 — 展示路线
+
+```html
+<iframe
+  src="https://your-domain.com/embed?data=https://mysite.com/route.geojson&dataColor=%2322c55e&dataLineWidth=4&dataName=配送路线&legend=true&basemap=dark"
+  width="100%"
+  height="500"
+/>
+```
+
+### 自定义数据 + 足迹叠加
+
+```html
+<iframe
+  src="https://your-domain.com/embed?layers=footprints&data=https://mysite.com/regions.geojson&dataColor=%23f59e0b&dataName=销售区域&legend=true"
+  width="100%"
+  height="600"
 />
 ```
 
